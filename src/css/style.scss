@@ -44,7 +44,10 @@ section{
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    box-shadow: 0px 10px 25px 0px rgba($color: $color-blue-pale, $alpha: 1.0);
     & > div:first-child{
+        height: 100%;
+        width: 350px;
         background: linear-gradient(to bottom, $gradient-background-1, $gradient-background-2);
         display: flex;
         flex-direction: column;
@@ -96,6 +99,10 @@ section{
                 margin-top: 12px;
             }
         }
+    }
+
+    & > div:last-child{        
+        width: 350px;
     }
 
     & > div:last-child > div{
@@ -169,20 +176,6 @@ button{
     }
 }
 
-@media screen and (min-width: 1440px){
-    section{
-        box-shadow: 0px 10px 25px 0px rgba($color: $color-blue-pale, $alpha: 1.0);
-        border-radius: 30px;
-        & > div:first-child{
-            height: 100%;
-            width: 350px
-        }
-        & > div:last-child{
-            width: 350px;
-        }
-    }
-}
-
 @media screen and (max-width: 376px){
     main{
         height: auto;
@@ -191,10 +184,13 @@ button{
     section{
         flex-direction: column;
         box-shadow: none;
+        border-radius: 0;
         & > div{
             width: 100vw;
+            height: auto;
         }
         & > div:first-child{
+            width: 100vw;
             border-top-left-radius: 0;
             border-top-right-radius: 0;
         }
