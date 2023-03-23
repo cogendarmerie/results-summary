@@ -1,0 +1,202 @@
+$color-light-red: hsl(0, 100%, 67%);
+$color-orangey-yellow: hsl(39, 100%, 56%);
+$color-green-teal: hsl(166, 100%, 37%);
+$color-cobalt-blue: hsl(234, 85%, 45%);
+
+$color-white: hsl(0, 0%, 100%);
+$color-blue-pale: hsl(221, 100%, 96%);
+$color-light-lavender: hsl(241, 100%, 89%);
+$color-dark-gray-blue: hsl(224, 30%, 27%);
+
+$gradient-background-1: hsl(252, 100%, 67%);
+$gradient-background-2: hsl(241, 81%, 54%);
+$gradient-circle-1: hsla(256, 72%, 46%, 1);
+$gradient-circle-2: hsla(241, 72%, 46%, 0);
+
+$font-default: "HankenGrotesk";
+
+/*begin::fonts*/
+@font-face{
+    font-family: "HankenGrotesk";
+    src: url('../../assets/fonts/HankenGrotesk-VariableFont_wght.ttf');
+}
+/*end::fonts*/
+
+body{
+    margin: 0;
+    padding: 0;
+    font-family: $font-default, Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    color: $color-dark-gray-blue;
+}
+
+main{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+section{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    & > div:first-child{
+        background: linear-gradient(to bottom, $gradient-background-1, $gradient-background-2);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        color: $color-white;
+        border-radius: 30px;
+
+        h1{
+            font-size: 16px;
+            color: $color-light-lavender;
+        }
+
+        .circle-result{
+            border-radius: 100rem;
+            height: 125px;
+            width: 125px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(to bottom, $gradient-circle-1, $gradient-circle-2);
+
+            & > p{
+                margin: 0;
+            }
+            & > p:first-child{
+                font-size: 48px;
+                font-weight: bold;
+            }
+            & > p:last-child{
+                font-size: 14px;
+                color: $color-light-lavender;
+            }
+        }
+
+        & > div:last-child{
+            h2{
+                font-size: 24px;
+                margin-bottom: 0;
+            }
+            p{
+                font-size: 14px;
+                color: $color-light-lavender;
+                padding-left: 64px;
+                padding-right: 64px;
+                padding-bottom: 26px;
+                margin-top: 12px;
+            }
+        }
+    }
+
+    & > div:last-child > div{
+        padding: 32px;
+        h2{
+            font-size: 18px;
+        }
+
+        .result{
+            padding: 16px 24px;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            border-radius: 8px;
+            margin-bottom: 16px;
+            & > div{
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                img{margin-right: 8px;}
+                p{margin: 0;font-size: 16px;}
+            }
+            & > div:last-child p{
+                color: rgba($color: $color-dark-gray-blue, $alpha: .5);
+                b{color: $color-dark-gray-blue;}
+            }
+            &[data-category='Reaction']{
+                background-color: rgba($color: $color-light-red, $alpha: 0.05);
+                & > div:first-child p{
+                    color: $color-light-red;
+                }
+            }
+            &[data-category='Memory']{
+                background-color: rgba($color: $color-orangey-yellow, $alpha: 0.05);
+                & > div:first-child p{
+                    color: $color-orangey-yellow;
+                }
+            }
+            &[data-category='Verbal']{
+                background-color: rgba($color: $color-green-teal, $alpha: 0.05);
+                & > div:first-child p{
+                    color: $color-green-teal;
+                }
+            }
+            &[data-category='Visual']{
+                background-color: rgba($color: $color-cobalt-blue, $alpha: 0.05);
+                & > div:first-child p{
+                    color: $color-cobalt-blue;
+                }
+            }
+        }
+    }
+}
+
+button{
+    display: block;
+    width: 100%;
+    background: $color-dark-gray-blue;
+    color: white;
+    padding: 16px 24px;
+    border-radius: 100rem;
+    font-size: 16px;
+    font-family: $font-default, Arial, Helvetica, sans-serif;
+    font-weight: 500;
+    border: none;
+    cursor: pointer;
+    transition: all .25s ease;
+    &:hover{
+        background: linear-gradient(to bottom, $gradient-background-1, $gradient-background-2);
+    }
+}
+
+@media screen and (min-width: 1440px){
+    section{
+        box-shadow: 0px 10px 25px 0px rgba($color: $color-blue-pale, $alpha: 1.0);
+        border-radius: 30px;
+        & > div:first-child{
+            height: 100%;
+            width: 350px
+        }
+        & > div:last-child{
+            width: 350px;
+        }
+    }
+}
+
+@media screen and (max-width: 376px){
+    main{
+        height: auto;
+    }
+
+    section{
+        flex-direction: column;
+        box-shadow: none;
+        & > div{
+            width: 100vw;
+        }
+        & > div:first-child{
+            border-top-left-radius: 0;
+            border-top-right-radius: 0;
+        }
+    }
+}

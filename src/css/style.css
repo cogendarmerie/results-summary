@@ -1,0 +1,181 @@
+/*begin::fonts*/
+@font-face {
+  font-family: "HankenGrotesk";
+  src: url("../../assets/fonts/HankenGrotesk-VariableFont_wght.ttf");
+}
+/*end::fonts*/
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "HankenGrotesk", Arial, Helvetica, sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  color: hsl(224, 30%, 27%);
+}
+
+main {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+section {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+section > div:first-child {
+  background: linear-gradient(to bottom, hsl(252, 100%, 67%), hsl(241, 81%, 54%));
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: hsl(0, 0%, 100%);
+  border-radius: 30px;
+}
+section > div:first-child h1 {
+  font-size: 16px;
+  color: hsl(241, 100%, 89%);
+}
+section > div:first-child .circle-result {
+  border-radius: 100rem;
+  height: 125px;
+  width: 125px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(to bottom, hsl(256, 72%, 46%), hsla(241, 72%, 46%, 0));
+}
+section > div:first-child .circle-result > p {
+  margin: 0;
+}
+section > div:first-child .circle-result > p:first-child {
+  font-size: 48px;
+  font-weight: bold;
+}
+section > div:first-child .circle-result > p:last-child {
+  font-size: 14px;
+  color: hsl(241, 100%, 89%);
+}
+section > div:first-child > div:last-child h2 {
+  font-size: 24px;
+  margin-bottom: 0;
+}
+section > div:first-child > div:last-child p {
+  font-size: 14px;
+  color: hsl(241, 100%, 89%);
+  padding-left: 64px;
+  padding-right: 64px;
+  padding-bottom: 26px;
+  margin-top: 12px;
+}
+section > div:last-child > div {
+  padding: 32px;
+}
+section > div:last-child > div h2 {
+  font-size: 18px;
+}
+section > div:last-child > div .result {
+  padding: 16px 24px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 8px;
+  margin-bottom: 16px;
+}
+section > div:last-child > div .result > div {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+section > div:last-child > div .result > div img {
+  margin-right: 8px;
+}
+section > div:last-child > div .result > div p {
+  margin: 0;
+  font-size: 16px;
+}
+section > div:last-child > div .result > div:last-child p {
+  color: rgba(48, 59, 90, 0.5);
+}
+section > div:last-child > div .result > div:last-child p b {
+  color: hsl(224, 30%, 27%);
+}
+section > div:last-child > div .result[data-category=Reaction] {
+  background-color: rgba(255, 87, 87, 0.05);
+}
+section > div:last-child > div .result[data-category=Reaction] > div:first-child p {
+  color: hsl(0, 100%, 67%);
+}
+section > div:last-child > div .result[data-category=Memory] {
+  background-color: rgba(255, 176, 31, 0.05);
+}
+section > div:last-child > div .result[data-category=Memory] > div:first-child p {
+  color: hsl(39, 100%, 56%);
+}
+section > div:last-child > div .result[data-category=Verbal] {
+  background-color: rgba(0, 189, 145, 0.05);
+}
+section > div:last-child > div .result[data-category=Verbal] > div:first-child p {
+  color: hsl(166, 100%, 37%);
+}
+section > div:last-child > div .result[data-category=Visual] {
+  background-color: rgba(17, 37, 212, 0.05);
+}
+section > div:last-child > div .result[data-category=Visual] > div:first-child p {
+  color: hsl(234, 85%, 45%);
+}
+
+button {
+  display: block;
+  width: 100%;
+  background: hsl(224, 30%, 27%);
+  color: white;
+  padding: 16px 24px;
+  border-radius: 100rem;
+  font-size: 16px;
+  font-family: "HankenGrotesk", Arial, Helvetica, sans-serif;
+  font-weight: 500;
+  border: none;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+button:hover {
+  background: linear-gradient(to bottom, hsl(252, 100%, 67%), hsl(241, 81%, 54%));
+}
+
+@media screen and (min-width: 1440px) {
+  section {
+    box-shadow: 0px 10px 25px 0px #ebf1ff;
+    border-radius: 30px;
+  }
+  section > div:first-child {
+    height: 100%;
+    width: 350px;
+  }
+  section > div:last-child {
+    width: 350px;
+  }
+}
+@media screen and (max-width: 376px) {
+  main {
+    height: auto;
+  }
+  section {
+    flex-direction: column;
+    box-shadow: none;
+  }
+  section > div {
+    width: 100vw;
+  }
+  section > div:first-child {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+  }
+}/*# sourceMappingURL=style.css.map */
